@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <string.h>
 
-// usage for base program: redirect <input> <output> <cmd>
+// usage for base program: redir <inp> <cmd> <out>
 // assume values for input and output are filenames! read & write to them
 
 int main(int argc, char *argv[])
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     if (argc < 4)
     {
         fprintf(stderr,
-                "Usage: %s <input> <output> <cmd>...\n", argv[0]);
+                "Usage: %s redir <inp> <cmd> <out>...\n", argv[0]);
         return 1;
     }
 
@@ -36,12 +36,13 @@ int main(int argc, char *argv[])
     }
 
     int output_fd;
-    if (strcmp(argv[2], "-") == 0)
+    if (strcmp(argv[3], "-") == 0)
     {
         output_fd = STDOUT_FILENO;
     }
     else
     {
+        // argv[3] since we are targeting the output file
         output_fd = open(argv[3], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
         if (output_fd == -1)
         {
@@ -52,18 +53,21 @@ int main(int argc, char *argv[])
 
     // split the command into diff. arguments
     char **newargv = (char **)malloc(sizeof(char *) * (argc - 2));
-    newargv[0] = argv[3];
-    for (int ix = 3; ix < argc; ix++)
+
+    // we start at 2 since we are not using the first 2 arguments
+    for (int ix = 2; ix < argc; ix++)
     {
-        newargv[ix - 3] = argv[ix];
+        newargv[ix - 2] = argv[ix];
     }
     newargv[argc - 3] = NULL;
 
+    /*
     printf("Debug: Executing this command: %s\n", newargv[0]);
     for (int ix = 0; newargv[ix] != NULL; ix++)
     {
         printf("Debug: newargv[%d] = %s\n", ix, newargv[ix]);
     }
+    */
 
     int child_pid = fork();
     if (child_pid == -1)
@@ -71,7 +75,7 @@ int main(int argc, char *argv[])
         perror("fork error");
         return 1;
     }
-    else if (child_pid == 0)
+    if (child_pid == 0)
     {
         // child process
         if (input_fd != STDIN_FILENO)
@@ -85,7 +89,7 @@ int main(int argc, char *argv[])
             close(output_fd);
         }
 
-        // need absolute path for execve
+        // need absolute path for execve so we use execvp
         execvp(newargv[0], newargv);
         // permission denied here
         /*for (int ix = 0; newargv[ix] != NULL; ix++)

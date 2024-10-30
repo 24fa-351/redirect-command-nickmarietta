@@ -1,0 +1,9 @@
+README.md
+clang-format
+input.txt
+ls
+output.txt
+redirect
+redirect.c
+run.sh
+wc

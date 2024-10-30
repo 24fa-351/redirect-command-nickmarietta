@@ -1,6 +1,9 @@
 # 351-redirect
 This project is based with the intended use of:
+
+```bash
 ./redir <input file> <command> <command arguments> <output file>
+```
 
 For Example:
 ./redirect input.txt wc output.txt

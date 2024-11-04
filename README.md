@@ -1,8 +1,15 @@
 # 351-redirect
 This project is based with the intended use of:
-<input> <output> <cmd>
+
+```bash
+./redirect <input file> <command> <command arguments> <output file>
+```
 
 For Example:
-the Linux command "wc -l" counts the number of lines
-
-./redirect input.txt output.txt wc -l
+```bash
+./redirect input.txt wc output.txt
+```
+or
+```bash
+./redirect input.txt ls output.txt
+```

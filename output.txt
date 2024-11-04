@@ -1,9 +1,10 @@
 README.md
 clang-format
+helperfunctions.c
 input.txt
-ls
 output.txt
 redirect
 redirect.c
+redirectNotes
+redirectNotes.c
 run.sh
-wc

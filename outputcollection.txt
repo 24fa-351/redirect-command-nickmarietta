@@ -1,0 +1,36 @@
+./redirect input.txt "wc" output.txt
+
+2 11 42
+
+./redirect input.txt "wc -l" output.txt
+
+2
+
+./redirect input.txt "ls" output.txt
+
+README.md
+clang-format
+helperfunctions.c
+input.txt
+output.txt
+outputcollection.txt
+redirect
+redirect.c
+redirectNotes
+redirectNotes.c
+run.sh
+
+./redirect input.txt "ls -l" output.txt
+
+total 68
+-rw-r--r-- 1 ---- ----   661 Nov  4 10:59 README.md
+-rw-r--r-- 1 ---- ----   133 Nov  1 21:10 clang-format
+-rw-r--r-- 1 ---- ----  1452 Nov  4 10:46 helperfunctions.c
+-rw-r--r-- 1 ---- ----    42 Oct 30 08:29 input.txt
+-rw-r--r-- 1 ---- ----     0 Nov  4 11:03 output.txt
+-rw-r--r-- 1 ---- ----     0 Nov  4 11:00 outputcollection.txt
+-rwxr-xr-x 1 ---- ---- 16824 Nov  4 10:16 redirect
+-rwxr-xr-x 1 ---- ----  2117 Nov  4 10:46 redirect.c
+-rwxr-xr-x 1 ---- ---- 16496 Nov  1 21:23 redirectNotes
+-rw-r--r-- 1 ---- ----  2036 Nov  1 21:48 redirectNotes.c
+-rwxr-xr-x 1 ---- ----    27 Nov  1 21:23 run.sh

@@ -16,13 +16,16 @@ or
 
 ## Sample Output!
 **input.txt** contains: 
-"hello i am nick
+```bash
+hello i am nick
 i am a student
-i like dogs"
+i like dogs
+```
 
 *./redirect input.txt "ls" output.txt*
 
 **output.txt**:
+```bash
 README.md
 clang-format
 helperfunctions.c
@@ -33,3 +36,4 @@ redirect.c
 redirectNotes
 redirectNotes.c
 run.sh
+```

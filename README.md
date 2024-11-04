@@ -13,3 +13,36 @@ or
 ```bash
 ./redirect input.txt ls output.txt
 ```
+
+## Sample Output!
+**input.txt** contains: 
+```bash
+hello i am nick
+i am a student
+i like dogs
+```
+
+*./redirect input.txt "ls" output.txt*
+
+**output.txt**:
+```bash
+README.md
+clang-format
+helperfunctions.c
+input.txt
+output.txt
+redirect
+redirect.c
+redirectNotes
+redirectNotes.c
+run.sh
+```
+
+**OR** (input.txt remains the same)<br>
+*./redirect input.txt "wc" output.txt*
+
+**output.txt**:
+```bash
+ 2 11 42
+```
+

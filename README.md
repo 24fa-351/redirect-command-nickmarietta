@@ -37,3 +37,12 @@ redirectNotes
 redirectNotes.c
 run.sh
 ```
+
+**OR**
+*./redirect input.txt "wc" output.txt*
+
+**output.txt**:
+```bash
+ 2 11 42
+```
+

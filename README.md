@@ -45,4 +45,4 @@ run.sh
 ```bash
  2 11 42
 ```
-For a little more, go to the outputcolllection.txt シ
+For a little more, go to the [outputcollection](outputcollection.txt) シ

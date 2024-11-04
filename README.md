@@ -38,7 +38,7 @@ redirectNotes.c
 run.sh
 ```
 
-**OR**
+**OR** (input.txt remains the same)<br>
 *./redirect input.txt "wc" output.txt*
 
 **output.txt**:

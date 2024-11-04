@@ -63,6 +63,7 @@ int main(int argc, char *argv[]) {
     perror("fork error");
     return 1;
   }
+
   if (child_pid == 0) {
     // child process
     if (input_fd != STDIN_FILENO) {

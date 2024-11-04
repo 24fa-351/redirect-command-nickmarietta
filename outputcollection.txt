@@ -34,3 +34,14 @@ total 68
 -rwxr-xr-x 1 ---- ---- 16496 Nov  1 21:23 redirectNotes
 -rw-r--r-- 1 ---- ----  2036 Nov  1 21:48 redirectNotes.c
 -rwxr-xr-x 1 ---- ----    27 Nov  1 21:23 run.sh
+
+./redirect input.txt "diff input.txt blankfile.txt" output.txt
+
+1,3c1
+< hello i am nick
+< i am a student
+< i like dogs
+\ No newline at end of file
+---
+> I am blank.
+\ No newline at end of file
